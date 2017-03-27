@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,17 +18,34 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LkL-mS-t3l">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="LkL-mS-t3l">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECIPE WORLD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VND-HK-5DQ">
+                                <rect key="frame" x="35" y="264" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.98833571387307284" green="1" blue="0.92979427485872412" alpha="0.75071522887323938" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="NJn-39-nDy"/>
+                                    <constraint firstAttribute="height" constant="40" id="gNb-nG-Xg9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VND-HK-5DQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0MQ-ZN-EWb"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="LkL-mS-t3l" secondAttribute="bottom" id="BQG-Tg-MNP"/>
                             <constraint firstItem="LkL-mS-t3l" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="FPW-67-U6l"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="LkL-mS-t3l" secondAttribute="bottom" id="I5t-kx-knC"/>
+                            <constraint firstAttribute="trailing" secondItem="LkL-mS-t3l" secondAttribute="trailing" id="buf-02-XKG"/>
+                            <constraint firstItem="VND-HK-5DQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="c6M-u9-i3y"/>
+                            <constraint firstItem="LkL-mS-t3l" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="j3B-Bt-945"/>
+                            <constraint firstItem="LkL-mS-t3l" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="nF6-zi-ZMc"/>
                             <constraint firstItem="LkL-mS-t3l" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ocy-66-W64"/>
                             <constraint firstAttribute="trailing" secondItem="LkL-mS-t3l" secondAttribute="trailing" id="pCX-RL-mmA"/>
                         </constraints>
@@ -39,4 +56,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreen" width="295" height="407"/>
+    </resources>
 </document>
