@@ -12,6 +12,7 @@
 		8ABD92DD1E800A94001A5988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD92DB1E800A94001A5988 /* Main.storyboard */; };
 		8ABD92DF1E800A94001A5988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD92DE1E800A94001A5988 /* Assets.xcassets */; };
 		8ABD92E21E800A94001A5988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD92E01E800A94001A5988 /* LaunchScreen.storyboard */; };
+		E8D2A95A1E895D7100DA943A /* RecipeWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8D2A9581E895D7100DA943A /* RecipeWorld.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8ABD92DE1E800A94001A5988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ABD92E11E800A94001A5988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ABD92E31E800A94001A5988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D2A9591E895D7100DA943A /* RecipeWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeWorld.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				8ABD92DE1E800A94001A5988 /* Assets.xcassets */,
 				8ABD92E01E800A94001A5988 /* LaunchScreen.storyboard */,
 				8ABD92E31E800A94001A5988 /* Info.plist */,
+				E8D2A9581E895D7100DA943A /* RecipeWorld.xcdatamodeld */,
 			);
 			path = recipeworld;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D2A95A1E895D7100DA943A /* RecipeWorld.xcdatamodeld in Sources */,
 				8ABD92DA1E800A94001A5988 /* ViewController.swift in Sources */,
 				8ABD92D81E800A94001A5988 /* AppDelegate.swift in Sources */,
 			);
@@ -299,8 +303,23 @@
 				8ABD92E81E800A94001A5988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8D2A9581E895D7100DA943A /* RecipeWorld.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8D2A9591E895D7100DA943A /* RecipeWorld.xcdatamodel */,
+			);
+			currentVersion = E8D2A9591E895D7100DA943A /* RecipeWorld.xcdatamodel */;
+			name = RecipeWorld.xcdatamodeld;
+			path = ../RecipeWorld.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8ABD92CC1E800A94001A5988 /* Project object */;
 }
