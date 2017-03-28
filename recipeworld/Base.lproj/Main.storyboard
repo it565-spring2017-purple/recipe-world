@@ -34,8 +34,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="RECIPE WORLD" id="rV4-lw-M3u">
                         <barButtonItem key="leftBarButtonItem" image="hamburger-icon" id="LhA-i0-mlE">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="gUb-bR-fnu" kind="presentation" id="ahi-ff-ThF"/>
+                                <segue destination="gUb-bR-fnu" kind="show" id="ahi-ff-ThF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,7 +68,9 @@
                             <outlet property="delegate" destination="7Va-43-b74" id="aD1-Rg-9pM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ZhV-wn-W5h"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ZhV-wn-W5h">
+                        <barButtonItem key="rightBarButtonItem" image="hamburger-icon" id="frA-d6-6hJ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D04-VU-F1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,9 +96,10 @@
         <scene sceneID="2Hc-dc-LhP">
             <objects>
                 <navigationController id="eRf-aT-AOI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bY7-ic-qiL">
+                    <navigationBar key="navigationBar" alpha="0.0" contentMode="scaleToFill" misplaced="YES" id="bY7-ic-qiL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="WRg-GL-lYM" kind="relationship" relationship="rootViewController" id="PHg-k4-VwU"/>
@@ -107,6 +111,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hamburger-icon" width="1000" height="1000"/>
+        <image name="hamburger-icon" width="24" height="24"/>
     </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
