@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eRf-aT-AOI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--RECIPE WORLD-->
         <scene sceneID="qip-aK-IRg">
             <objects>
-                <tableViewController id="WRg-GL-lYM" sceneMemberID="viewController">
+                <tableViewController id="WRg-GL-lYM" customClass="DashboardController" customModule="recipeworld" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z1P-gc-ygH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,11 +32,62 @@
                             <outlet property="delegate" destination="WRg-GL-lYM" id="Pbi-fX-Agw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rV4-lw-M3u"/>
+                    <navigationItem key="navigationItem" title="RECIPE WORLD" id="rV4-lw-M3u">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger-icon" id="LhA-i0-mlE">
+                            <connections>
+                                <segue destination="gUb-bR-fnu" kind="presentation" id="ahi-ff-ThF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfQ-Xb-ATg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-480" y="146"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="yrL-If-o1o">
+            <objects>
+                <tableViewController id="7Va-43-b74" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pdf-Ik-sK1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rh2-mx-fOO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rh2-mx-fOO" id="b3u-zI-VKw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7Va-43-b74" id="gHo-Ac-34T"/>
+                            <outlet property="delegate" destination="7Va-43-b74" id="aD1-Rg-9pM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ZhV-wn-W5h"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D04-VU-F1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="-621"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RxF-JB-diK">
+            <objects>
+                <navigationController id="gUb-bR-fnu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HJd-kW-KFd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Va-43-b74" kind="relationship" relationship="rootViewController" id="TMD-I2-QIv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="avA-H9-EqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="281" y="-621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Hc-dc-LhP">
@@ -55,4 +106,7 @@
             <point key="canvasLocation" x="-1432" y="146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hamburger-icon" width="1000" height="1000"/>
+    </resources>
 </document>
