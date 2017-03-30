@@ -1,18 +1,18 @@
 //
-//  DashboardController.swift
+//  MainPageController.swift
 //  recipeworld
 //
-//  Created by Ravali Reddy Akkati on 3/28/17.
+//  Created by Ravali Reddy Akkati on 3/30/17.
 //  Copyright © 2017 it565purple. All rights reserved.
 //
 
 import UIKit
 
-class DashboardController: UITableViewController {
+class MainPageController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //To delete the empty rows from table view
         
         //tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -40,7 +40,8 @@ class DashboardController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-    
+
+    @IBAction func unwindToMainPage(segue: UIStoryboardSegue) {}
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,6 +52,7 @@ class DashboardController: UITableViewController {
         return cell
     }
     */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
