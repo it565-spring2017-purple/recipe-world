@@ -9,19 +9,25 @@
 import UIKit
 
 class MainPageController: UITableViewController {
-
+    
+    var recipeCategories:[RecipeCategory] = [
+        RecipeCategory(categoryName: "Daily Recipes", categoryImage: "LaunchScreen.jpg"),
+        RecipeCategory(categoryName: "Regional Recipes", categoryImage: "LaunchScreen.jpg")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //To delete the empty rows from table view
         
-        //tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,25 +39,30 @@ class MainPageController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        //return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        //return 0
+        return recipeCategories.count
     }
 
     @IBAction func unwindToMainPage(segue: UIStoryboardSegue) {}
     
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell", for: indexPath) as! RecipeCategoryCell
 
         // Configure the cell...
-
+        
+        cell.categoryNameLabel.text = " " + recipeCategories[indexPath.row].categoryName! + " "
+        cell.categoryImageView.image = UIImage(named: recipeCategories[indexPath.row].categoryImage)
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
