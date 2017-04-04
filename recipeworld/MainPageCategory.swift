@@ -12,7 +12,7 @@
 
 import Foundation
 
-class RecipeCategory {
+class mainPageCategory {
     var categoryName:String? = ""
     var categoryImage = ""
     
