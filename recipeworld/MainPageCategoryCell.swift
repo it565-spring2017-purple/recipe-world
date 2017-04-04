@@ -8,7 +8,7 @@
 
 import UIKit
 
-class mainPageCategoryCell: UITableViewCell {
+class MainPageCategoryCell: UITableViewCell {
     
     @IBOutlet var categoryNameLabel: UILabel!
     @IBOutlet var categoryImageView: UIImageView!

@@ -10,9 +10,9 @@ import UIKit
 
 class MainPageController: UITableViewController {
     
-    var recipeCategories:[RecipeCategory] = [
-        RecipeCategory(categoryName: "Daily Recipes", categoryImage: "LaunchScreen.jpg"),
-        RecipeCategory(categoryName: "Regional Recipes", categoryImage: "LaunchScreen.jpg")
+    var mainPageCategories:[MainPageCategory] = [
+        MainPageCategory(categoryName: "Daily Recipes", categoryImage: "LaunchScreen.jpg"),
+        MainPageCategory(categoryName: "Regional Recipes", categoryImage: "LaunchScreen.jpg")
     ]
     
     override func viewDidLoad() {
@@ -46,19 +46,19 @@ class MainPageController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         //return 0
-        return recipeCategories.count
+        return mainPageCategories.count
     }
 
     @IBAction func unwindToMainPage(segue: UIStoryboardSegue) {}
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell", for: indexPath) as! RecipeCategoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell", for: indexPath) as! MainPageCategoryCell
 
         // Configure the cell...
         
-        cell.categoryNameLabel.text = " " + recipeCategories[indexPath.row].categoryName! + " "
-        cell.categoryImageView.image = UIImage(named: recipeCategories[indexPath.row].categoryImage)
+        cell.categoryNameLabel.text = " " + mainPageCategories[indexPath.row].categoryName! + " "
+        cell.categoryImageView.image = UIImage(named: mainPageCategories[indexPath.row].categoryImage)
         
         return cell
     }

@@ -1,9 +1,23 @@
 //
-//  RegionalPageCategoryCell.swift
+//  RecipeCategoryCell.swift
 //  recipeworld
 //
-//  Created by Tiedeken, Eric on 4/4/17.
+//  Created by Tiedeken, Eric on 4/3/17.
 //  Copyright © 2017 it565purple. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class RegionalPageCategoryCell: UITableViewCell {
+    
+    @IBOutlet var categoryNameLabel: UILabel!
+    @IBOutlet var categoryImageView: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+}

@@ -12,7 +12,7 @@
 
 import Foundation
 
-class mainPageCategory {
+class MainPageCategory {
     var categoryName:String? = ""
     var categoryImage = ""
     

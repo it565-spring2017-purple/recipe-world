@@ -11,9 +11,12 @@
 		8ABD92DD1E800A94001A5988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD92DB1E800A94001A5988 /* Main.storyboard */; };
 		8ABD92DF1E800A94001A5988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD92DE1E800A94001A5988 /* Assets.xcassets */; };
 		8ABD92E21E800A94001A5988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD92E01E800A94001A5988 /* LaunchScreen.storyboard */; };
-		8AD3B0531E928564006F2B68 /* RecipeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3B0521E928564006F2B68 /* RecipeCategory.swift */; };
-		8AD3B0551E9287EC006F2B68 /* RecipeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3B0541E9287EC006F2B68 /* RecipeCategoryCell.swift */; };
+		8AD3B0531E928564006F2B68 /* MainPageCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3B0521E928564006F2B68 /* MainPageCategory.swift */; };
+		8AD3B0551E9287EC006F2B68 /* MainPageCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3B0541E9287EC006F2B68 /* MainPageCategoryCell.swift */; };
 		8AFD5AAD1E93D7880052E715 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFD5AAC1E93D7880052E715 /* DashboardController.swift */; };
+		8AFD5AAF1E93DF1A0052E715 /* RegionalPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFD5AAE1E93DF1A0052E715 /* RegionalPageController.swift */; };
+		8AFD5AB11E93DF900052E715 /* RegionalPageCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFD5AB01E93DF900052E715 /* RegionalPageCategory.swift */; };
+		8AFD5AB31E93E1050052E715 /* RegionalPageCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFD5AB21E93E1050052E715 /* RegionalPageCategoryCell.swift */; };
 		E86DB52E1E8D4A5300EAA362 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52D1E8D4A5300EAA362 /* MainPageController.swift */; };
 		E8D2A95A1E895D7100DA943A /* RecipeWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8D2A9581E895D7100DA943A /* RecipeWorld.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -25,9 +28,12 @@
 		8ABD92DE1E800A94001A5988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ABD92E11E800A94001A5988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ABD92E31E800A94001A5988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AD3B0521E928564006F2B68 /* RecipeCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCategory.swift; sourceTree = "<group>"; };
-		8AD3B0541E9287EC006F2B68 /* RecipeCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCategoryCell.swift; sourceTree = "<group>"; };
+		8AD3B0521E928564006F2B68 /* MainPageCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageCategory.swift; sourceTree = "<group>"; };
+		8AD3B0541E9287EC006F2B68 /* MainPageCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageCategoryCell.swift; sourceTree = "<group>"; };
 		8AFD5AAC1E93D7880052E715 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		8AFD5AAE1E93DF1A0052E715 /* RegionalPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionalPageController.swift; sourceTree = "<group>"; };
+		8AFD5AB01E93DF900052E715 /* RegionalPageCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionalPageCategory.swift; sourceTree = "<group>"; };
+		8AFD5AB21E93E1050052E715 /* RegionalPageCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionalPageCategoryCell.swift; sourceTree = "<group>"; };
 		E86DB52D1E8D4A5300EAA362 /* MainPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		E8D2A9591E895D7100DA943A /* RecipeWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeWorld.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,9 +75,12 @@
 				8ABD92E01E800A94001A5988 /* LaunchScreen.storyboard */,
 				8ABD92E31E800A94001A5988 /* Info.plist */,
 				E8D2A9581E895D7100DA943A /* RecipeWorld.xcdatamodeld */,
-				8AD3B0521E928564006F2B68 /* RecipeCategory.swift */,
-				8AD3B0541E9287EC006F2B68 /* RecipeCategoryCell.swift */,
+				8AD3B0521E928564006F2B68 /* MainPageCategory.swift */,
+				8AD3B0541E9287EC006F2B68 /* MainPageCategoryCell.swift */,
 				8AFD5AAC1E93D7880052E715 /* DashboardController.swift */,
+				8AFD5AAE1E93DF1A0052E715 /* RegionalPageController.swift */,
+				8AFD5AB01E93DF900052E715 /* RegionalPageCategory.swift */,
+				8AFD5AB21E93E1050052E715 /* RegionalPageCategoryCell.swift */,
 			);
 			path = recipeworld;
 			sourceTree = "<group>";
@@ -149,10 +158,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D2A95A1E895D7100DA943A /* RecipeWorld.xcdatamodeld in Sources */,
-				8AD3B0551E9287EC006F2B68 /* RecipeCategoryCell.swift in Sources */,
-				8AD3B0531E928564006F2B68 /* RecipeCategory.swift in Sources */,
+				8AFD5AB11E93DF900052E715 /* RegionalPageCategory.swift in Sources */,
+				8AD3B0551E9287EC006F2B68 /* MainPageCategoryCell.swift in Sources */,
+				8AD3B0531E928564006F2B68 /* MainPageCategory.swift in Sources */,
 				E86DB52E1E8D4A5300EAA362 /* MainPageController.swift in Sources */,
+				8AFD5AB31E93E1050052E715 /* RegionalPageCategoryCell.swift in Sources */,
 				8AFD5AAD1E93D7880052E715 /* DashboardController.swift in Sources */,
+				8AFD5AAF1E93DF1A0052E715 /* RegionalPageController.swift in Sources */,
 				8ABD92D81E800A94001A5988 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
