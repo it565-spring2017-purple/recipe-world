@@ -11,7 +11,6 @@ import UIKit
 class RegionalPageCategoryCell: UITableViewCell {
     
     @IBOutlet var categoryNameLabel: UILabel!
-    @IBOutlet var categoryImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

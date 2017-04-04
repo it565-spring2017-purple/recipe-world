@@ -10,9 +10,19 @@ import UIKit
 
 class RegionalPageController: UITableViewController {
 
+    var regionalPageCategories:[RegionalPageCategory] = [
+        RegionalPageCategory(categoryName: "American Recipes"),
+        RegionalPageCategory(categoryName: "Chinese Recipes"),
+        RegionalPageCategory(categoryName: "Indian Recipes"),
+        RegionalPageCategory(categoryName: "Italian Recipes"),
+        RegionalPageCategory(categoryName: "Mexican Recipes")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +39,25 @@ class RegionalPageController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return regionalPageCategories.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "regionalPageCell", for: indexPath) as! RegionalPageCategoryCell
 
         // Configure the cell...
+        
+        cell.categoryNameLabel.text = regionalPageCategories[indexPath.row].categoryName!
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

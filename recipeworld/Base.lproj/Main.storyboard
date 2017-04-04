@@ -48,6 +48,7 @@
                                 <connections>
                                     <outlet property="categoryImageView" destination="EYF-Rq-QSj" id="PSC-BM-leE"/>
                                     <outlet property="categoryNameLabel" destination="kgt-U7-HpW" id="OPd-VF-HXm"/>
+                                    <segue destination="JlP-zA-8fv" kind="show" action="showDetailViewController:sender:" id="3pZ-5D-wBe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,19 +74,34 @@
         <!--Regional Recipes-->
         <scene sceneID="DgD-gl-XXZ">
             <objects>
-                <tableViewController title="Regional Recipes" id="JlP-zA-8fv" sceneMemberID="viewController">
+                <tableViewController title="Regional Recipes" id="JlP-zA-8fv" customClass="RegionalPageController" customModule="recipeworld" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fSL-8q-u3U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="neg-vc-toz">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="regionalPageCell" rowHeight="100" id="neg-vc-toz" customClass="RegionalPageCategoryCell" customModule="recipeworld" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="neg-vc-toz" id="rIb-7g-XlO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="categoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RW-dy-cmx">
+                                            <rect key="frame" x="102" y="35" width="172" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3RW-dy-cmx" firstAttribute="centerY" secondItem="rIb-7g-XlO" secondAttribute="centerY" id="0Yt-2w-Yxe"/>
+                                        <constraint firstItem="3RW-dy-cmx" firstAttribute="centerX" secondItem="rIb-7g-XlO" secondAttribute="centerX" id="FWR-ZG-UsZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryNameLabel" destination="3RW-dy-cmx" id="Qbb-EW-o3H"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

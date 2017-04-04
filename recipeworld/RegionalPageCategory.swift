@@ -13,11 +13,9 @@
 import Foundation
 
 class RegionalPageCategory {
-    var categoryIdentifier:String = ""
     var categoryName:String? = ""
     
-    init(categoryIdentifier:String, categoryName: String) {
-        self.categoryIdentifier = categoryIdentifier
+    init(categoryName: String) {
         self.categoryName = categoryName
     }
 }
