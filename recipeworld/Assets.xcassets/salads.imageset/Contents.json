@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "salads.jpeg",
+      "filename" : "salads.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "salads@2x.jpeg",
+      "filename" : "salads@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "salads@3x.jpeg",
+      "filename" : "salads@3x.jpg",
       "scale" : "3x"
     }
   ],

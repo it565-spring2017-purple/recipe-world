@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "seasonal.jpeg",
+      "filename" : "seasonal.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "seasonal@2x.jpeg",
+      "filename" : "seasonal@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "seasonal@3x.jpeg",
+      "filename" : "seasonal@3x.jpg",
       "scale" : "3x"
     }
   ],
