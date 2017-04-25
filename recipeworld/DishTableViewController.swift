@@ -1,26 +1,20 @@
 //
-//  MainPageController.swift
-//  recipeworld
+//  DishTableViewController.swift
+//  test
 //
-//  Created by Ravali Reddy Akkati on 3/30/17.
-//  Copyright © 2017 it565purple. All rights reserved.
+//  Created by eric.tiedeken@b507.us on 4/24/17.
+//  Copyright © 2017 eric.tiedeken@b507.us. All rights reserved.
 //
 
 import UIKit
 
-class MainPageController: UITableViewController {
-    
-    var mainPageCategories:[MainPageCategory] = [
-        MainPageCategory(categoryName: "Daily Recipes", categoryImage: "LaunchScreen.jpg"),
-        MainPageCategory(categoryName: "Regional Recipes", categoryImage: "LaunchScreen.jpg")
-    ]
+class DishTableViewController: UITableViewController {
+
+    var regional: String = ""
+    var dish: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //To delete the empty rows from table view
-        
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,6 +22,9 @@ class MainPageController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        self.title = self.regional
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,30 +36,23 @@ class MainPageController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        //return 0
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //return 0
-        return mainPageCategories.count
+        return 4
     }
 
-    @IBAction func unwindToMainPage(segue: UIStoryboardSegue) {}
-    
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mainPageCell", for: indexPath) as! MainPageCategoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        
-        cell.categoryNameLabel.text = " " + mainPageCategories[indexPath.row].categoryName! + " "
-        cell.categoryImageView.image = UIImage(named: mainPageCategories[indexPath.row].categoryImage)
-        
+
         return cell
     }
- 
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -107,7 +97,30 @@ class MainPageController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        
+        if segue.identifier == "MainDishesSegue" {
+            let destinationController = segue.destination as! RecipeListTableViewController
+            destinationController.regional = regional
+            dish = "MainDishes"
+            destinationController.dish = dish
+        }
+        else if segue.identifier == "DessertsSegue" {
+            let destinationController = segue.destination as! RecipeListTableViewController
+            destinationController.regional = regional
+            dish = "Desserts"
+            destinationController.dish = dish
+        }
+        else if segue.identifier == "SaladsSegue" {
+            let destinationController = segue.destination as! RecipeListTableViewController
+            destinationController.regional = regional
+            dish = "Salads"
+            destinationController.dish = dish
+        }
+        else if segue.identifier == "AppetizersSegue" {
+            let destinationController = segue.destination as! RecipeListTableViewController
+            destinationController.regional = regional
+            dish = "Appetizers"
+            destinationController.dish = dish
+        }
     }
  
 
