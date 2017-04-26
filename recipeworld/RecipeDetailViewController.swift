@@ -1,17 +1,23 @@
 //
-//  DishTableViewController.swift
-//  test
+//  RecipeDetailTableViewController.swift
+//  recipeworld
 //
-//  Created by eric.tiedeken@b507.us on 4/24/17.
-//  Copyright © 2017 eric.tiedeken@b507.us. All rights reserved.
+//  Created by eric.tiedeken@b507.us on 4/25/17.
+//  Copyright © 2017 it565purple. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-class DishTableViewController: UITableViewController {
-
+class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var recipeImageView: UIImageView!
+    
     var regional: String = ""
     var dish: String = ""
+    
+    var recipe:RecipeMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +26,14 @@ class DishTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.BeditButtonItem()
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.title = self.regional
+        recipeImageView.image = UIImage(data: (recipe?.recipe_image)! as Data)
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.title = recipe.recipe_name
+        
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,26 +42,36 @@ class DishTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+ 
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 5
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RecipeDetailCell
 
         // Configure the cell...
 
+        switch indexPath.row {
+        case 0:
+            cell.fieldLabel.text = "Recipe Name"
+            cell.valueLabel.text = recipe?.recipe_name
+        default:
+            cell.fieldLabel.text = ""
+            cell.valueLabel.text = ""
+        }
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,39 +108,14 @@ class DishTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "MainDishesSegue" {
-            let destinationController = segue.destination as! RecipeListTableViewController
-            destinationController.regional = regional
-            dish = "MainDishes"
-            destinationController.dish = dish
-        }
-        else if segue.identifier == "DessertsSegue" {
-            let destinationController = segue.destination as! RecipeListTableViewController
-            destinationController.regional = regional
-            dish = "Desserts"
-            destinationController.dish = dish
-        }
-        else if segue.identifier == "SaladsSegue" {
-            let destinationController = segue.destination as! RecipeListTableViewController
-            destinationController.regional = regional
-            dish = "Salads"
-            destinationController.dish = dish
-        }
-        else if segue.identifier == "AppetizersSegue" {
-            let destinationController = segue.destination as! RecipeListTableViewController
-            destinationController.regional = regional
-            dish = "Appetizers"
-            destinationController.dish = dish
-        }
     }
- 
+    */
 
 }

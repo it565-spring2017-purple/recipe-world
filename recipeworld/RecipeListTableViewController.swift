@@ -11,7 +11,9 @@ import CoreData
 
 class RecipeListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    @IBAction func unwindToRecipeList(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToRecipeList(segue: UIStoryboardSegue) {
+        tableView.reloadData()
+    }
     
     var regional: String = ""
     var dish: String = ""
@@ -64,6 +66,7 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
                 print(error)
             }
         }
+        
         
     }
     
@@ -145,6 +148,14 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
             let destinationController = navController.viewControllers.first as! AddRecipeTableViewController
             destinationController.regional = regional
             destinationController.dish = dish
+        }
+        else if segue.identifier == "RecipeDetailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RecipeDetailViewController
+                destinationController.recipe = self.recipes[indexPath.row]
+                destinationController.regional = regional
+                destinationController.dish = dish
+            }
         }
     }
     
