@@ -11,8 +11,8 @@ import CoreData
 
 class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var recipeImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var recipeImageView: UIImageView!
     
     var regional: String = ""
     var dish: String = ""
@@ -36,22 +36,26 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-    
+    /*
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
- 
+    */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 4
     }
 
     
@@ -59,11 +63,20 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RecipeDetailCell
 
         // Configure the cell...
-
+        
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Recipe Name"
             cell.valueLabel.text = recipe?.recipe_name
+        case 1:
+            cell.fieldLabel.text = "Ingredients List"
+            cell.valueLabel.text = recipe?.recipe_ingredients
+        case 2:
+            cell.fieldLabel.text = "Directions List"
+            cell.valueLabel.text = recipe?.recipe_directions
+        case 3:
+            cell.fieldLabel.text = "Video"
+            cell.valueLabel.text = recipe?.recipe_video
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

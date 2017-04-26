@@ -43,7 +43,6 @@ class AddRecipeTableViewController: UITableViewController, UIImagePickerControll
                     {
                         recipe.recipe_image = NSData(data: imageData)
                         
-                        print("image saved")
                     }
                 }
                 appDelegate.saveContext()

@@ -10,8 +10,8 @@ import UIKit
 
 class RecipeDetailCell: UITableViewCell {
     
-    @IBOutlet var fieldLabel: UILabel!
-    @IBOutlet var valueLabel: UILabel!
+    @IBOutlet weak var fieldLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
