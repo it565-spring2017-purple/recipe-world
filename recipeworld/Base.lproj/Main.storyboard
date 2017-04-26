@@ -720,8 +720,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="directionsBox" destination="H0h-dY-8oV" id="5Qa-q3-NA2"/>
+                        <outlet property="ingredientsBox" destination="zWS-Oq-mAU" id="HuS-fv-iO1"/>
                         <outlet property="nameBox" destination="mZh-iX-bv2" id="Cfs-u0-dJd"/>
                         <outlet property="photoImageView" destination="E1Q-dX-1tC" id="FsP-FF-CEh"/>
+                        <outlet property="videoBox" destination="RjR-Ke-0gZ" id="CzH-ax-Ia0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dce-Fj-Agg" userLabel="First Responder" sceneMemberID="firstResponder"/>

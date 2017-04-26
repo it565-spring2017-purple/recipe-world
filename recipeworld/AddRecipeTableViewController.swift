@@ -13,6 +13,9 @@ class AddRecipeTableViewController: UITableViewController, UIImagePickerControll
     
     @IBOutlet weak var nameBox: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ingredientsBox: UITextView!
+    @IBOutlet weak var directionsBox: UITextView!
+    @IBOutlet weak var videoBox: UITextField!
     
     var regional: String = ""
     var dish: String = ""
@@ -29,6 +32,9 @@ class AddRecipeTableViewController: UITableViewController, UIImagePickerControll
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                 recipe = RecipeMO(context: appDelegate.persistentContainer.viewContext)
                 recipe.recipe_name = nameBox.text
+                recipe.recipe_ingredients = ingredientsBox.text
+                recipe.recipe_directions = directionsBox.text
+                recipe.recipe_video = videoBox.text
                 recipe.recipe_cuisine = regional
                 recipe.recipe_type = dish
                 
