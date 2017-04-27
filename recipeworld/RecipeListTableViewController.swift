@@ -143,7 +143,7 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
             // Delete row visually
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         })
-        deleteAction.backgroundColor = UIColor(red:0.02, green:1.00, blue:0.00, alpha:1.0)
+        deleteAction.backgroundColor = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.0)
         
         
         return [deleteAction]

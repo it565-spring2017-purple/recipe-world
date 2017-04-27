@@ -20,6 +20,14 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     var recipe:RecipeMO!
     
+    
+    func loadYoutube(videoID:String) {
+        guard
+            let youtubeURL = URL(string: videoID)
+            else { return }
+        youTube.loadRequest( URLRequest(url: youtubeURL) )
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,16 +43,9 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         self.title = recipe.recipe_name
         
-        loadYoutube(videoID: "")
+        loadYoutube(videoID: recipe.recipe_video!)
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    func loadYoutube(videoID:String) {
-        guard
-            let youtubeURL = URL(string: "recipe_video")
-            else { return }
-        youTube.loadRequest( URLRequest(url: youtubeURL) )
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +67,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 9
+        return 3
         
     }
 
@@ -78,17 +79,11 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         switch indexPath.row {
         case 0:
-            cell.fieldLabel.text = "Recipe Name"
-            cell.valueLabel.text = recipe?.recipe_name
-        case 1:
             cell.fieldLabel.text = "Ingredients List"
             cell.valueLabel.text = recipe?.recipe_ingredients
-        case 2:
+        case 1:
             cell.fieldLabel.text = "Directions List"
             cell.valueLabel.text = recipe?.recipe_directions
-        case 3:
-            cell.fieldLabel.text = "Video"
-            cell.valueLabel.text = recipe?.recipe_video
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
