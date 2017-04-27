@@ -19,10 +19,6 @@ class EditRecipeTableViewController: UITableViewController, UIImagePickerControl
     
     var regional: String = ""
     var dish: String = ""
-    var recipename: String = ""
-    var recipeingredients: String = ""
-    var recipedirections: String = ""
-    var recipevideo: String = ""
     
     var recipe:RecipeMO!
     
@@ -33,7 +29,11 @@ class EditRecipeTableViewController: UITableViewController, UIImagePickerControl
         if ((nameBox.text?.isEmpty)!) {
             present(alertMessage, animated: true, completion: nil)
         } else {
+            
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context = appDelegate.persistentContainer.viewContext
+                context.delete(self.recipe)
+                
                 recipe = RecipeMO(context: appDelegate.persistentContainer.viewContext)
                 recipe.recipe_name = nameBox.text
                 recipe.recipe_ingredients = ingredientsBox.text
@@ -53,9 +53,9 @@ class EditRecipeTableViewController: UITableViewController, UIImagePickerControl
             }
             
             dismiss(animated: true, completion: nil)
+            
         }
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +70,13 @@ class EditRecipeTableViewController: UITableViewController, UIImagePickerControl
         tableView.estimatedRowHeight = 80.0   // sets estimated row height ... currently prototype cell height
         tableView.rowHeight = UITableViewAutomaticDimension  // must be combined with number of lines = 0 in the Value label
         
+        self.title = recipe.recipe_name
         
+        nameBox.text = recipe.recipe_name
+        photoImageView.image = UIImage(data: recipe.recipe_image! as Data)
+        ingredientsBox.text = recipe.recipe_ingredients
+        directionsBox.text = recipe.recipe_directions
+        videoBox.text = recipe.recipe_video
     }
 
     override func didReceiveMemoryWarning() {

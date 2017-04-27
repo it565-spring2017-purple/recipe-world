@@ -11,6 +11,10 @@ import CoreData
 
 class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBAction func unwindToRecipeDetail(segue: UIStoryboardSegue) {
+        tableView.reloadData()
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var youTube: UIWebView!
@@ -43,7 +47,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         self.title = recipe.recipe_name
         
-        loadYoutube(videoID: recipe.recipe_video!)
+        loadYoutube(videoID: "https://www.youtube.com/embed/" + recipe.recipe_video!)
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -71,6 +75,15 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
     }
 
+    @IBAction func shareButton() {
+        // Social Sharing Button
+        let defaultText = "This recipe is awesome - " + self.recipe.recipe_name!
+        if let imageToShare = UIImage(data: self.recipe.recipe_image! as Data) {
+            let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            
+            self.present(activityController, animated: true, completion: nil)
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RecipeDetailCell
@@ -139,12 +152,13 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         if segue.identifier == "EditRecipeSegue" {
             let navController = segue.destination as! UINavigationController
             let destinationController = navController.viewControllers.first as! EditRecipeTableViewController
+            //let destinationController = segue.destination as! EditRecipeTableViewController
             destinationController.regional = regional
             destinationController.dish = dish
-            destinationController.recipename = recipe.recipe_name!
-            destinationController.recipevideo = recipe.recipe_video!
-            destinationController.recipedirections = recipe.recipe_directions!
-            destinationController.recipeingredients = recipe.recipe_ingredients!
+            //destinationController.recipename = recipe.recipe_name!
+            //destinationController.recipevideo = recipe.recipe_video!
+            //destinationController.recipedirections = recipe.recipe_directions!
+            //destinationController.recipeingredients = recipe.recipe_ingredients!
             destinationController.recipe = self.recipe
         }
     }

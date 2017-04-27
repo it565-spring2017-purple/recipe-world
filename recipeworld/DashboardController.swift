@@ -32,7 +32,7 @@ class DashboardController: UITableViewController, MFMailComposeViewControllerDel
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected row = \(indexPath.description)")
         
-        if indexPath.row == 1 {
+        if indexPath.row == 0 {
             
             print("Rate Our App tapped")
             
@@ -61,7 +61,7 @@ class DashboardController: UITableViewController, MFMailComposeViewControllerDel
             
         }
         
-        if indexPath.row == 2 {
+        if indexPath.row == 1 {
             
             print("Feedback row tapped")
             
@@ -117,7 +117,7 @@ class DashboardController: UITableViewController, MFMailComposeViewControllerDel
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 3
     }
     
     
