@@ -15,6 +15,7 @@ class RegionalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         tableView.backgroundColor = UIColor(red: 0.52, green: 0.73, blue: 0.73, alpha: 0.3)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

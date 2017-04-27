@@ -24,6 +24,7 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         tableView.backgroundColor = UIColor(red: 0.52, green: 0.73, blue: 0.73, alpha: 0.3)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -59,7 +60,7 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
                 // Execute fetch request
                 try fetchResultController.performFetch()
                 if let fetchedObjects = fetchResultController.fetchedObjects {
-                    // Get RestaurantMO objects by accessing the fetchedObjects property
+                    // Get RecipeMO objects by accessing the fetchedObjects property
                     recipes = fetchedObjects
                 }
             } catch {
@@ -107,7 +108,7 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
     }
  
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -118,7 +119,30 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
- 
+ */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        // Cancel completion
+        
+        
+        // Delete Button
+        let deleteAction = UITableViewRowAction(style: .default, title: "\u{1f5d1}\n delete", handler: { (action, indexPath) -> Void in
+            
+            // Delete row data source
+            self.recipes.remove(at: indexPath.row)
+            //self.restaurantLocations.remove(at: indexPath.row)
+            //self.restaurantTypes.remove(at: indexPath.row)
+            //self.restaurantImages.remove(at: indexPath.row)
+            //self.restaurantIsVisited.remove(at: indexPath.row)
+            // Delete row visually
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        })
+        deleteAction.backgroundColor = UIColor(red:0.02, green:1.00, blue:0.00, alpha:1.0)
+        
+        
+        return [deleteAction]
+
+    }
 
     /*
     // Override to support rearranging the table view.

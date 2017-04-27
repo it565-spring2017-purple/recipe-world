@@ -13,6 +13,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var youTube: UIWebView!
     
     var regional: String = ""
     var dish: String = ""
@@ -21,6 +22,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = UIColor(red: 0.52, green: 0.73, blue: 0.73, alpha: 0.3)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,8 +35,16 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
         
         self.title = recipe.recipe_name
         
+        loadYoutube(videoID: "")
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func loadYoutube(videoID:String) {
+        guard
+            let youtubeURL = URL(string: "recipe_video")
+            else { return }
+        youTube.loadRequest( URLRequest(url: youtubeURL) )
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +66,8 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 9
+        
     }
 
     
