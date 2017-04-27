@@ -10,6 +10,8 @@ import UIKit
 
 class MainPageTableViewController: UITableViewController {
     
+    var regional: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,14 +88,25 @@ class MainPageTableViewController: UITableViewController {
      }
      */
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "RegionalSegue" {
+            let destinationController = segue.destination as! RegionalTableViewController
+            regional = "Regional"
+            destinationController.regional = regional
+        }
+        else if segue.identifier == "DailySegue" {
+            let destinationController = segue.destination as! DishTableViewController
+            regional = "Daily"
+            destinationController.regional = regional
+        }
      }
-     */
+    
     
 }

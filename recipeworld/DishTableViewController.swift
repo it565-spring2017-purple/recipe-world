@@ -122,6 +122,12 @@ class DishTableViewController: UITableViewController {
             dish = "Appetizers"
             destinationController.dish = dish
         }
+        else if segue.identifier == "BreakfastSegue" {
+            let destinationController = segue.destination as! RecipeListTableViewController
+            destinationController.regional = regional
+            dish = "Breakfast"
+            destinationController.dish = dish
+        }
     }
  
 
