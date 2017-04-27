@@ -1,23 +1,28 @@
 //
-//  RecipeCategoryCell.swift
+//  MyAccountCell.swift
 //  recipeworld
 //
-//  Created by Tiedeken, Eric on 4/3/17.
+//  Created by Ravali Reddy Akkati on 4/20/17.
 //  Copyright © 2017 it565purple. All rights reserved.
 //
 
 import UIKit
 
-class MainPageCategoryCell: UITableViewCell {
+class profile: UITableViewCell {
     
-    @IBOutlet var categoryNameLabel: UILabel!
-    @IBOutlet var categoryImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var thumbnailImageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
     }
+    
 }

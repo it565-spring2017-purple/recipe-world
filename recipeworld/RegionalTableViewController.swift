@@ -1,33 +1,30 @@
 //
-//  RegionalPageController.swift
-//  recipeworld
+//  MainTableViewController.swift
+//  test
 //
-//  Created by Tiedeken, Eric on 4/4/17.
-//  Copyright © 2017 it565purple. All rights reserved.
+//  Created by eric.tiedeken@b507.us on 4/24/17.
+//  Copyright © 2017 eric.tiedeken@b507.us. All rights reserved.
 //
 
 import UIKit
 
-class RegionalPageController: UITableViewController {
+class RegionalTableViewController: UITableViewController {
 
-    var regionalPageCategories:[RegionalPageCategory] = [
-        RegionalPageCategory(categoryName: "American Recipes"),
-        RegionalPageCategory(categoryName: "Chinese Recipes"),
-        RegionalPageCategory(categoryName: "Indian Recipes"),
-        RegionalPageCategory(categoryName: "Italian Recipes"),
-        RegionalPageCategory(categoryName: "Mexican Recipes")
-    ]
+    var regional: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
+
+         tableView.backgroundColor = UIColor(red: 0.52, green: 0.73, blue: 0.73, alpha: 0.3)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.title = self.regional + " Recipes"
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,20 +41,18 @@ class RegionalPageController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return regionalPageCategories.count
+        return 5
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "regionalPageCell", for: indexPath) as! RegionalPageCategoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        
-        cell.categoryNameLabel.text = regionalPageCategories[indexPath.row].categoryName!
 
         return cell
     }
- 
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -101,7 +96,33 @@ class RegionalPageController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "AmericanSegue" {
+            let destinationController = segue.destination as! DishTableViewController
+            regional = "American"
+            destinationController.regional = regional
+        }
+        else if segue.identifier == "IndianSegue" {
+            let destinationController = segue.destination as! DishTableViewController
+            regional = "Indian"
+            destinationController.regional = regional
+        }
+        else if segue.identifier == "ChineseSegue" {
+            let destinationController = segue.destination as! DishTableViewController
+            regional = "Chinese"
+            destinationController.regional = regional
+        }
+        else if segue.identifier == "ItalianSegue" {
+            let destinationController = segue.destination as! DishTableViewController
+            regional = "Italian"
+            destinationController.regional = regional
+        }
+        else if segue.identifier == "MexicanSegue" {
+            let destinationController = segue.destination as! DishTableViewController
+            regional = "Mexican"
+            destinationController.regional = regional
+        }
     }
-    
+ 
 
 }
