@@ -128,6 +128,12 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
         // Delete Button
         let deleteAction = UITableViewRowAction(style: .default, title: "\u{1f5d1}\n delete", handler: { (action, indexPath) -> Void in
             
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context = appDelegate.persistentContainer.viewContext
+                context.delete(self.recipes[indexPath.row])
+                appDelegate.saveContext()
+            }
+            
             // Delete row data source
             self.recipes.remove(at: indexPath.row)
             //self.restaurantLocations.remove(at: indexPath.row)
