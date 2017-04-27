@@ -1095,7 +1095,7 @@
                     <navigationItem key="navigationItem" title="Title" id="Pht-5d-zH7">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="rfL-6S-IXF">
                             <connections>
-                                <segue destination="aNZ-Dp-ZNH" kind="show" identifier="EditSegue" id="2iJ-Kz-UvR"/>
+                                <segue destination="gX0-ZL-9dV" kind="show" identifier="EditRecipeSegue" id="nfG-Vq-Ong"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1518,7 +1518,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tiJ-iT-2gG"/>
-        <segue reference="2iJ-Kz-UvR"/>
         <segue reference="M8X-t5-bnU"/>
     </inferredMetricsTieBreakers>
 </document>

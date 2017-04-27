@@ -19,10 +19,10 @@ class EditRecipeTableViewController: UITableViewController, UIImagePickerControl
     
     var regional: String = ""
     var dish: String = ""
-    var name: String = ""
-    var ingredients: String = ""
-    var directions: String = ""
-    var video: String = ""
+    var recipename: String = ""
+    var recipeingredients: String = ""
+    var recipedirections: String = ""
+    var recipevideo: String = ""
     
     var recipe:RecipeMO!
     
@@ -69,6 +69,8 @@ class EditRecipeTableViewController: UITableViewController, UIImagePickerControl
         
         tableView.estimatedRowHeight = 80.0   // sets estimated row height ... currently prototype cell height
         tableView.rowHeight = UITableViewAutomaticDimension  // must be combined with number of lines = 0 in the Value label
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -128,14 +128,26 @@ class RecipeDetailViewController: UIViewController, UITableViewDataSource, UITab
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "EditRecipeSegue" {
+            let navController = segue.destination as! UINavigationController
+            let destinationController = navController.viewControllers.first as! EditRecipeTableViewController
+            destinationController.regional = regional
+            destinationController.dish = dish
+            destinationController.recipename = recipe.recipe_name!
+            destinationController.recipevideo = recipe.recipe_video!
+            destinationController.recipedirections = recipe.recipe_directions!
+            destinationController.recipeingredients = recipe.recipe_ingredients!
+            destinationController.recipe = self.recipe
+        }
     }
-    */
+ 
 
 }
