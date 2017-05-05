@@ -12,7 +12,7 @@ import CoreData
 class RecipeListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     @IBAction func unwindToRecipeList(segue: UIStoryboardSegue) {
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     var regional: String = ""
@@ -67,7 +67,12 @@ class RecipeListTableViewController: UITableViewController, NSFetchedResultsCont
                 print(error)
             }
         }
-        
+        self.viewWillAppear(true)
+        self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
     
